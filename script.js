@@ -12,8 +12,14 @@ function makeRows(rows, cols) {
   container.style.setProperty('--grid-cols', cols);
   for (let c = 0; c < (rows * cols); c++) {
     let cell = document.createElement("div");
+    cell.addEventListener('mouseover', () => sketch(cell))
     container.appendChild(cell).className = "grid-item";
   };
 };
 
-makeRows(16, 16);
+makeRows(16,16);
+
+function sketch(cell) {
+  cell.style.backgroundColor = 'black';
+}
+

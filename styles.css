@@ -46,8 +46,18 @@ body {
   padding: 10px;
 }
 
+.rainbowMode {
+  display: flex;
+  align-items: center;
+}
 .active {
-  height: 20px;
-  padding: 15px;
+  display: inline-block;
+  margin-left: 4px;
+  width: 5px;
+  padding: 5px;
   border: 1px solid black;
+}
+
+.green {
+  background-color: green;
 }

@@ -7,6 +7,9 @@
 // Creates a default grid sized 16x16
 const container = document.querySelector("#container");
 const clearButton = document.querySelector('.clearGrid');
+const rainbowButton = document.querySelector('.rainbowMode');
+const activeLight = document.querySelector('.active');
+let active = false;
 
 function greateGrid(rows = 16, columns = 16) {
   let total = (rows * columns);
@@ -33,7 +36,21 @@ function clearGrid(amount = 16) {
 }
 
 function colorGrid(square) {
- return square.classList.add('black');
+  let r = Math.floor(Math.random() * 256);
+  let g = Math.floor(Math.random() * 256);
+  let b = Math.floor(Math.random() * 256);
+  if(active) {
+    square.classList.remove('black');
+    square.style.setProperty('background-color', `rgb(${r},${g},${b})`);
+  }
+ square.classList.add('black');
+}
+
+function rgb() {
+  activeLight.classList.toggle('green');
+  active = !active;
+  console.log(active);
 }
 
 clearButton.addEventListener('click', clearGrid);
+rainbowButton.addEventListener('click', rgb);

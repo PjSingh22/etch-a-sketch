@@ -42,8 +42,9 @@ function colorGrid(square) {
   if(active) {
     square.classList.remove('black');
     square.style.setProperty('background-color', `rgb(${r},${g},${b})`);
+  } else {
+    square.classList.add('black');
   }
- square.classList.add('black');
 }
 
 function rgb() {
